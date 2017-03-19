@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import Dashboard from '@/components/Dashboard'
+import PostsIndex from '@/components/posts/Index.vue'
+import PostsShow from '@/components/posts/Show.vue'
+import PostsNew from '@/components/posts/New.vue'
 
 Vue.use(Router)
 
@@ -10,11 +12,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/login',
       name: 'Login',
       component: Login
     },
@@ -22,6 +19,21 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '/postsIndex',
+      name: 'Posts.index',
+      component: PostsIndex
+    },
+    {
+      path: '/posts/:id',
+      name: 'Posts.show',
+      component: PostsShow
+    },
+    {
+      path: '/posts/new',
+      name: 'Posts.new',
+      component: PostsNew
     }
   ]
 })
